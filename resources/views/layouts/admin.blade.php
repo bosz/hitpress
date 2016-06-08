@@ -104,11 +104,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/users">All Users</a>
+                                <a href="{{route('admin.users.index')}}">All Users</a>
                             </li>
 
                             <li>
-                                <a href="/users/create">Create User</a>
+                                <a href="{{route('admin.users.create')}}">Create Users</a>
                             </li>
 
                         </ul>
@@ -305,7 +305,7 @@
             <div class="col-lg-12">
                 <h1 class="page-header"></h1>
 
-                @yield('content')
+@yield('content')
             </div>
             <!-- /.col-lg-12 -->
         </div>

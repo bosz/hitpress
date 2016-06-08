@@ -29,6 +29,7 @@ class UsersRequest extends Request
             'email'=>'required',
             'role_id'=>'required',
             'is_active'=>'required',
+//            'photo_id'=>''
             'password'=>'required',
         ];
     }
