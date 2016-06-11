@@ -115,7 +115,7 @@ class AdminUsersController extends Controller
             $input=$request->all();
         }
 
-        //updating photo if updated by user
+        //updating photo if photo is  updated by user
         if ($file = $request->photo_id) {
 
 

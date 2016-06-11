@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Photo;
 use App\Post;
 use Illuminate\Http\Request;
@@ -19,8 +20,8 @@ class AdminPostsController extends Controller
     public function index()
     {
         //
-        $post=Post::all();
-        return view('admin.posts.index',compact('post'));
+        $posts=Post::all();
+        return view('admin.posts.index',compact('posts'));
     }
 
     /**
@@ -58,8 +59,8 @@ class AdminPostsController extends Controller
         }
 
         //NOTE!! inserting data into posts table with user_id of user who is creating this note
-//        $user->posts()->create($input);
-//        return redirect()->route('admin.post.index');
+        $user->posts()->create($input);
+        return redirect()->route('admin.post.index');
 
     }
 
@@ -83,7 +84,9 @@ class AdminPostsController extends Controller
     public function edit($id)
     {
         //
-        return view('admin.posts.edit');
+        $post= Post::findOrFail($id);
+        $category=Category::lists('name','id');
+        return view('admin.posts.edit',compact('post','category'));
     }
 
     /**
@@ -96,6 +99,17 @@ class AdminPostsController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $input=$request->all();
+        $post=Post::findOrFail($id);
+        if ($file=$request->photo_id){
+            $name=$file->getClientOriginalName();
+            $file->move('images',$name);
+            $photo=Photo::create(['file'=>$name]);
+            $input['photo_id']=$photo->id;
+
+        }
+         $post->update($input);
+        return redirect()->route('admin.post.index');
     }
 
     /**
