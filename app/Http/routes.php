@@ -30,3 +30,5 @@ Route::get('/admin',function(){
 });
 
 Route::resource('admin/post','AdminPostsController');
+
+Route::resource('admin/category','CategoriesController');

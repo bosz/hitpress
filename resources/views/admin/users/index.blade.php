@@ -3,6 +3,7 @@
 @section('content')
 
     <h2>Users</h2>
+    <hr>
 
     @if(Session::has('deleted_user'))
         <p>{{session('deleted_user')}}</p>

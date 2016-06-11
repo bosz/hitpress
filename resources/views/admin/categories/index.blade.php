@@ -1,0 +1,43 @@
+@extends('layouts.admin')
+
+@section('content')
+
+
+    <div class="col-md-6 create-category">
+        <h2>Create Category</h2>
+
+        {!! Form::open(['method'=>'post','action'=>'CategoriesController@store']) !!}
+
+        <div class="form-group">
+            {!! Form::label('name','Name: ') !!}
+            {!! Form::text('name',null,['class'=>'form-control']) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::submit('Create Category',['class'=>'btn btn-primary'])!!}
+        </div>
+        {!! Form::close() !!}
+    </div>
+
+    <div class="col-md-6 show-category">
+        <h2>Categories</h2>
+        <table class="table">
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Created at</th>
+            </tr>
+
+            @foreach($categories as $category)
+
+                <tr>
+                    <td>{{$category->id}}</td>
+                    <td><a href="{{route('admin.category.edit',$category->id)}}">{{$category->name}}</a> </td>
+                    <td>{{$category->created_at?$category->created_at->diffForhumans():'N/A'}}</td>
+                </tr>
+
+            @endforeach
+        </table>
+    </div>
+
+@stop
