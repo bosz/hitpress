@@ -111,6 +111,7 @@
                                 <a href="{{route('admin.users.create')}}">Create Users</a>
                             </li>
 
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -119,11 +120,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="#">All Posts</a>
+                                <a href="{{route('admin.post.index')}}">All Posts</a>
                             </li>
 
                             <li>
-                                <a href="#">Create Post</a>
+                                <a href="{{route('admin.post.create')}}">Create Post</a>
                             </li>
 
                         </ul>
