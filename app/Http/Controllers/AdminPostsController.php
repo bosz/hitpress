@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class AdminPostsController extends Controller
 {
@@ -32,7 +33,8 @@ class AdminPostsController extends Controller
     public function create()
     {
         //
-        return view('admin.posts.create');
+        $categories=Category::lists('name','id');
+        return view('admin.posts.create',compact('categories'));
 
     }
 
@@ -121,5 +123,13 @@ class AdminPostsController extends Controller
     public function destroy($id)
     {
         //
+        $post=Post::find($id);
+        unlink(public_path(). $post->photo->file);
+
+        $post->delete();
+        
+        Session::flash('deleted_post','Post has been deleted Successfully');
+
+        return redirect()->route('admin.post.index');
     }
 }

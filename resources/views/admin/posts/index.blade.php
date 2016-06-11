@@ -3,6 +3,11 @@
 @section('content')
     <h2>Posts</h2>
 
+    @if(Session::has('deleted_post'))
+        <div class="alert alert-danger">{{session('deleted_post')}}</div>
+
+    @endif
+
     <table class="table">
         <tr>
             <th>Id</th>
