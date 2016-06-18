@@ -9,7 +9,7 @@
 ##How to Install
 Step 1: Clone the repo or download the zip and extract into your server
 
-Step2: Run composer install and npm install commands
+Step2: Run `composer install` and `npm install` commands
 
 
 ## Official Documentation
