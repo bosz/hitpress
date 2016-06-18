@@ -34,8 +34,8 @@
            <td>{{$user->email}}</td>
            <td>{{$user->role?$user->role->name:'administrator'}}</td>
            <td>{{$user->is_active==1?'Active':'Not Active'}}</td>
-           <td>{{$user->created_at->diffForHumans()}}</td>
-           <td>{{$user->updated_at->diffForHumans()}}</td>
+           <td>{{$user->created_at?$user->created_at->diffForHumans():'N/A'}}</td>
+           <td>{{$user->updated_at?$user->updated_at->diffForHumans():'N/A'}}</td>
        </tr>
     @endforeach
     @endif

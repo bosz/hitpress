@@ -23,7 +23,8 @@
 
         <div class="form-group">
             {!! Form::label('body','Post Title: ') !!}
-            {!! Form::textarea('body',null,['class'=>'form-control','rows'=>5]) !!}
+            {!! Form::textarea('body',null,['class'=>'form-control','id'=>'mytextarea','rows'=>5]) !!}
+
         </div>
 
         <div class="form-group">
@@ -31,5 +32,11 @@
         </div>
 
     {!! Form::close() !!}
+
+
+
+@stop
+
+@section('script')
 
 @stop

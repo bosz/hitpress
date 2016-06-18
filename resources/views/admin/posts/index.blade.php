@@ -21,11 +21,11 @@
         @foreach($posts as $post)
             <tr>
                 <td>{{$post->id}}</td>
-                <td><a href="{{route('admin.post.edit',$post->id)}}">{{$post->user?$post->user->name:'Anonymous'}}</a> </td>
+                <td>{{$post->user?$post->user->name:'Anonymous'}} </td>
                 <td><img height="50" src="{{$post->photo?$post->photo->file:'/images/dp.jpg'}}" alt=""></td>
                 <td>{{$post->category?$post->category->name:'Uncategorized'}}</td>
-                <td>{{$post->title}}</td>
-                <td>{{$post->body}}</td>
+                <td><a href="{{route('admin.post.edit',$post->id)}}">{{$post->title}}</a></td>
+                <td>{{str_limit($post->body,100,' ...')}}</td>
             </tr>
         @endforeach
     </table>

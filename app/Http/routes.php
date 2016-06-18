@@ -11,26 +11,42 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'AdminPostsController@home');
 
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::group(['middleware'=>'admin'],function(){
-    Route::resource('admin/users','AdminUsersController');
+Route::resource('admin/users','AdminUsersController');
+
+//Route::group(['middleware'=>'admin'],function(){
+//    Route::resource('admin/users','AdminUsersController');
+//});
+
+
+
+Route::get('/login',function(){
+    if(Auth::check()){
+        return redirect('admin');
+    }else{
+        return view('auth.login');
+    }
+
 });
-
-
 
 Route::get('/admin',function(){
-   return view('admin.index');
+   return view('layouts.admin');
 });
+
+Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostsController@post']);
 
 Route::resource('admin/post','AdminPostsController');
 
 Route::resource('admin/category','CategoriesController');
 
 Route::resource('admin/media','MediaController');
+
+Route::resource('admin/comments','PostsCommentsController');
+
+Route::resource('admin/comments/replies','CommentsRepliesController');
+

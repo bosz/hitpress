@@ -13,6 +13,9 @@
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
+    {{--<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>--}}
+    <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
+
     @yield('styles')
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -129,6 +132,11 @@
                                 <a href="{{route('admin.post.create')}}">Create Post</a>
                             </li>
 
+                            <li>
+                                <a href="{{route('admin.comments.index')}}">All Comments</a>
+
+                            </li>
+
                         </ul>
                         <!-- /.nav-second-level -->
                     </li>
@@ -145,6 +153,8 @@
                                 <a href="{{route('admin.category.index')}}">Create Categories</a>
 
                             </li>
+
+
 
                         </ul>
                         <!-- /.nav-second-level -->
@@ -326,7 +336,14 @@
 <script src="{{asset('js/libs.js')}}"></script>
 
 @yield('footer')
+@yield('script')
 
+
+<script>
+    tinymce.init({
+        selector: '#mytextarea'
+    });
+</script>
 
 </body>
 
