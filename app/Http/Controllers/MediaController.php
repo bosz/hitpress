@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Photo;
+use hitpress\Photo;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 
 class MediaController extends Controller
 {

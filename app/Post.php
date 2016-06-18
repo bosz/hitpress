@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hitpress;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,20 +12,20 @@ class Post extends Model
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('hitpress\User');
     }
 
     public function photo()
     {
-        return $this->belongsTo('App\Photo');
+        return $this->belongsTo('hitpress\Photo');
     }
 
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo('hitpress\Category');
     }
 
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('hitpress\Comment');
     }
 }

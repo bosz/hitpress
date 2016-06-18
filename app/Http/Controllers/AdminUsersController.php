@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Http\Requests\UsersRequest;
-use App\Http\Requests\UserEditRequest;
-use App\Role;
-use App\User;
-use App\Photo;
+use hitpress\Http\Requests\UsersRequest;
+use hitpress\Http\Requests\UserEditRequest;
+use hitpress\Role;
+use hitpress\User;
+use hitpress\Photo;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 

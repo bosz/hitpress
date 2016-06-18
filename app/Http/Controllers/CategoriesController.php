@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Category;
+use hitpress\Category;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 
 class CategoriesController extends Controller
 {

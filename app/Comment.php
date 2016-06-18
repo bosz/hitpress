@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hitpress;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +16,6 @@ class Comment extends Model
     ];
 
     public function replies(){
-        return $this->hasMany('App\Reply');
+        return $this->hasMany('hitpress\Reply');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hitpress;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hitpress;
 
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -26,11 +26,11 @@ class User extends Authenticatable
     ];
 
     public function role(){
-        return $this->belongsTo('App\Role');
+        return $this->belongsTo('hitpress\Role');
     }
 
     public function photo(){
-        return $this->belongsTo('App\Photo');
+        return $this->belongsTo('hitpress\Photo');
     }
 
     public function isAdmin(){
@@ -42,6 +42,6 @@ class User extends Authenticatable
     }
 
     public function posts(){
-        return $this->hasMany('App\Post');
+        return $this->hasMany('hitpress\Post');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace hitpress\Providers;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;

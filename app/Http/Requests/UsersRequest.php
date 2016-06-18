@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Requests;
+namespace hitpress\Http\Requests;
 
-use App\Http\Requests\Request;
+use hitpress\Http\Requests\Request;
 
 class UsersRequest extends Request
 {

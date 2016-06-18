@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace hitpress\Http\Controllers\Auth;
 
-use App\User;
+use hitpress\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use hitpress\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

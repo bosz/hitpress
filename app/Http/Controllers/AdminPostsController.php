@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Category;
-use App\Comment;
-use App\Photo;
-use App\Post;
+use hitpress\Category;
+use hitpress\Comment;
+use hitpress\Photo;
+use hitpress\Post;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 

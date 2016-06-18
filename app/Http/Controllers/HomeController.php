@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller

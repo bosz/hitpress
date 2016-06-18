@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Reply;
+use hitpress\Reply;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use hitpress\Http\Requests;
 
 class CommentsRepliesController extends Controller
 {

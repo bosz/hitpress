@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace hitpress;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -16,6 +16,6 @@ class Reply extends Model
     ];
 
     public function comment(){
-        $this->belongsTo('App\Comment');
+        $this->belongsTo('hitpress\Comment');
     }
 }

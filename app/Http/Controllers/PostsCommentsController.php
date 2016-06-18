@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace hitpress\Http\Controllers;
 
-use App\Comment;
+use hitpress\Comment;
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
-use App\Http\Requests\CommentRequest;
+use hitpress\Http\Requests;
+use hitpress\Http\Requests\CommentRequest;
 
 class PostsCommentsController extends Controller
 {
