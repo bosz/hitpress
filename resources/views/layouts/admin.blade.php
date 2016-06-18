@@ -1,350 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Admin</title>
+
+    <title>Gentellela Alela! | </title>
+
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
-    {{--<script src="//cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>--}}
-    <script src='https://cdn.tinymce.com/4/tinymce.min.js'></script>
-
-    @yield('styles')
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
-<body id="admin-page">
 
-<div id="wrapper">
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/">Home</a>
-        </div>
-        <!-- /.navbar-header -->
+<body class="nav-md">
+<div class="container body">
+    <div class="main_container">
+        <div class="col-md-3 left_col">
+            <div class="left_col scroll-view">
+                <div class="navbar nav_title" style="border: 0;">
+                    <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentellela Alela!</span></a>
+                </div>
 
-        <ul class="nav navbar-top-links navbar-right">
+                <div class="clearfix"></div>
 
+                <!-- menu profile quick info -->
+                <div class="profile">
+                    <div class="profile_pic">
+                        <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                    </div>
+                    <div class="profile_info">
+                        <span>Welcome,</span>
+                        <h2>John Doe</h2>
+                    </div>
+                </div>
+                <!-- /menu profile quick info -->
 
-            <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
+                <br />
 
-
-        </ul>
-
-
-        {{--<ul class="nav navbar-nav navbar-right">--}}
-        {{--@if(auth()->guest())--}}
-        {{--@if(!Request::is('auth/login'))--}}
-        {{--<li><a href="{{ url('/auth/login') }}">Login</a></li>--}}
-        {{--@endif--}}
-        {{--@if(!Request::is('auth/register'))--}}
-        {{--<li><a href="{{ url('/auth/register') }}">Register</a></li>--}}
-        {{--@endif--}}
-        {{--@else--}}
-        {{--<li class="dropdown">--}}
-        {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ auth()->user()->name }} <span class="caret"></span></a>--}}
-        {{--<ul class="dropdown-menu" role="menu">--}}
-        {{--<li><a href="{{ url('/auth/logout') }}">Logout</a></li>--}}
-
-        {{--<li><a href="{{ url('/admin/profile') }}/{{auth()->user()->id}}">Profile</a></li>--}}
-        {{--</ul>--}}
-        {{--</li>--}}
-        {{--@endif--}}
-        {{--</ul>--}}
-
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search...">
-                                <span class="input-group-btn">
-                                    <button class="btn btn-default" type="button">
-                                        <i class="fa fa-search"></i>
-                                    </button>
-                                </span>
-                        </div>
-                        <!-- /input-group -->
-                    </li>
-                    <li>
-                        <a href="/admin"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Users<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.users.index')}}">All Users</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.users.create')}}">Create Users</a>
-                            </li>
-
-
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.post.index')}}">All Posts</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.post.create')}}">Create Post</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.comments.index')}}">All Comments</a>
-
-                            </li>
-
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Categories<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.category.index')}}">All Categories</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.category.index')}}">Create Categories</a>
-
-                            </li>
-
-
-
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>Media<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="{{route('admin.media.index')}}">All Media</a>
-                            </li>
-
-                            <li>
-                                <a href="{{route('admin.media.create')}}">Upload Media</a>
-                            </li>
-
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-
-
-
-
-
-
-
-                    <li>
-                        <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="flot.html">Flot Charts</a>
-                            </li>
-                            <li>
-                                <a href="morris.html">Morris.js Charts</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
-                    </li>
-                    <li>
-                        <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="panels-wells.html">Panels and Wells</a>
-                            </li>
-                            <li>
-                                <a href="buttons.html">Buttons</a>
-                            </li>
-                            <li>
-                                <a href="notifications.html">Notifications</a>
-                            </li>
-                            <li>
-                                <a href="typography.html">Typography</a>
-                            </li>
-                            <li>
-                                <a href="icons.html"> Icons</a>
-                            </li>
-                            <li>
-                                <a href="grid.html">Grid</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Second Level Item</a>
-                            </li>
-                            <li>
-                                <a href="#">Third Level <span class="fa arrow"></span></a>
-                                <ul class="nav nav-third-level">
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Third Level Item</a>
-                                    </li>
+                <!-- sidebar menu -->
+                <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+                    <div class="menu_section">
+                        <h3>General</h3>
+                        <ul class="nav side-menu">
+                            <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="index.html">All Users</a></li>
+                                    <li><a href="index2.html">Category</a></li>
+                                    <li><a href="index3.html">Pages</a></li>
                                 </ul>
-                                <!-- /.nav-third-level -->
                             </li>
+                            <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="form.html">General Form</a></li>
+                                    <li><a href="form_advanced.html">Advanced Components</a></li>
+                                    <li><a href="form_validation.html">Form Validation</a></li>
+                                    <li><a href="form_wizards.html">Form Wizard</a></li>
+                                    <li><a href="form_upload.html">Form Upload</a></li>
+                                    <li><a href="form_buttons.html">Form Buttons</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="general_elements.html">General Elements</a></li>
+                                    <li><a href="media_gallery.html">Media Gallery</a></li>
+                                    <li><a href="typography.html">Typography</a></li>
+                                    <li><a href="icons.html">Icons</a></li>
+                                    <li><a href="glyphicons.html">Glyphicons</a></li>
+                                    <li><a href="widgets.html">Widgets</a></li>
+                                    <li><a href="invoice.html">Invoice</a></li>
+                                    <li><a href="inbox.html">Inbox</a></li>
+                                    <li><a href="calendar.html">Calendar</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="tables.html">Tables</a></li>
+                                    <li><a href="tables_dynamic.html">Table Dynamic</a></li>
+                                </ul>
+                            </li>
+                            <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
+                                <ul class="nav child_menu">
+                                    <li><a href="chartjs.html">Chart JS</a></li>
+                                    <li><a href="chartjs2.html">Chart JS2</a></li>
+                                    <li><a href="morisjs.html">Moris JS</a></li>
+                                    <li><a href="echarts.html">ECharts</a></li>
+                                    <li><a href="other_charts.html">Other Charts</a></li>
+                                </ul>
+                            </li>
+                            {{--<li><a><i class="fa fa-clone"></i>Layouts <span class="fa fa-chevron-down"></span></a>--}}
+                                {{--<ul class="nav child_menu">--}}
+                                    {{--<li><a href="fixed_sidebar.html">Fixed Sidebar</a></li>--}}
+                                    {{--<li><a href="fixed_footer.html">Fixed Footer</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
                         </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                    <li class="active">
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a class="active" href="blank.html">Blank Page</a>
-                            </li>
-                            <li>
-                                <a href="login.html">Login Page</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
-                </ul>
+                    </div>
+                    {{--<div class="menu_section">--}}
+                        {{--<h3>Live On</h3>--}}
+                        {{--<ul class="nav side-menu">--}}
+                            {{--<li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>--}}
+                                {{--<ul class="nav child_menu">--}}
+                                    {{--<li><a href="e_commerce.html">E-commerce</a></li>--}}
+                                    {{--<li><a href="projects.html">Projects</a></li>--}}
+                                    {{--<li><a href="project_detail.html">Project Detail</a></li>--}}
+                                    {{--<li><a href="contacts.html">Contacts</a></li>--}}
+                                    {{--<li><a href="profile.html">Profile</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>--}}
+                                {{--<ul class="nav child_menu">--}}
+                                    {{--<li><a href="page_403.html">403 Error</a></li>--}}
+                                    {{--<li><a href="page_404.html">404 Error</a></li>--}}
+                                    {{--<li><a href="page_500.html">500 Error</a></li>--}}
+                                    {{--<li><a href="plain_page.html">Plain Page</a></li>--}}
+                                    {{--<li><a href="login.html">Login Page</a></li>--}}
+                                    {{--<li><a href="pricing_tables.html">Pricing Tables</a></li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li><a><i class="fa fa-sitemap"></i> Multilevel Menu <span class="fa fa-chevron-down"></span></a>--}}
+                                {{--<ul class="nav child_menu">--}}
+                                    {{--<li><a href="#level1_1">Level One</a>--}}
+                                    {{--<li><a>Level One<span class="fa fa-chevron-down"></span></a>--}}
+                                        {{--<ul class="nav child_menu">--}}
+                                            {{--<li class="sub_menu"><a href="level2.html">Level Two</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a href="#level2_1">Level Two</a>--}}
+                                            {{--</li>--}}
+                                            {{--<li><a href="#level2_2">Level Two</a>--}}
+                                            {{--</li>--}}
+                                        {{--</ul>--}}
+                                    {{--</li>--}}
+                                    {{--<li><a href="#level1_2">Level One</a>--}}
+                                    {{--</li>--}}
+                                {{--</ul>--}}
+                            {{--</li>--}}
+                            {{--<li><a href="javascript:void(0)"><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a></li>--}}
+                        {{--</ul>--}}
+                    {{--</div>--}}
 
+                </div>
+                <!-- /sidebar menu -->
 
+                <!-- /menu footer buttons -->
+                <div class="sidebar-footer hidden-small">
+                    <a data-toggle="tooltip" data-placement="top" title="Settings">
+                        <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="FullScreen">
+                        <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Lock">
+                        <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
+                    </a>
+                    <a data-toggle="tooltip" data-placement="top" title="Logout">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                    </a>
+                </div>
+                <!-- /menu footer buttons -->
             </div>
-            <!-- /.sidebar-collapse -->
         </div>
-        <!-- /.navbar-static-side -->
-    </nav>
 
-    <div class="navbar-default sidebar" role="navigation">
-        <div class="sidebar-nav navbar-collapse">
-            <ul class="nav" id="side-menu">
-                <li>
-                    <a href="/profile"><i class="fa fa-dashboard fa-fw"></i>Profile</a>
-                </li>
+        <!-- top navigation -->
+        <div class="top_nav">
+            <div class="nav_menu">
+                <nav>
+                    <div class="nav toggle">
+                        <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+                    </div>
 
-
-
-
-                <li>
-                    <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
-                    <ul class="nav nav-second-level">
-                        <li>
-                            <a href="">All Posts</a>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                                <img src="images/img.jpg" alt="">John Doe
+                                <span class=" fa fa-angle-down"></span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-usermenu pull-right">
+                                <li><a href="javascript:;"> Profile</a></li>
+                                <li>
+                                    <a href="javascript:;">
+                                        <span class="badge bg-red pull-right">50%</span>
+                                        <span>Settings</span>
+                                    </a>
+                                </li>
+                                <li><a href="javascript:;">Help</a></li>
+                                <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
+                            </ul>
                         </li>
 
-                        <li>
-                            <a href="">Create Post</a>
+                        <li role="presentation" class="dropdown">
+                            <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
+                                <i class="fa fa-envelope-o"></i>
+                                <span class="badge bg-green">6</span>
+                            </a>
+                            <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a>
+                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                        <span>
+                          <span>John Smith</span>
+                          <span class="time">3 mins ago</span>
+                        </span>
+                        <span class="message">
+                          Film festivals used to be do-or-die moments for movie makers. They were where...
+                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <div class="text-center">
+                                        <a>
+                                            <strong>See All Alerts</strong>
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
                         </li>
-
                     </ul>
-                    <!-- /.nav-second-level -->
-                </li>
-
-
-
-
-
-            </ul>
-
-        </div>
-
-    </div>
-
-</div>
-
-<!-- Page Content -->
-<div id="page-wrapper">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="page-header"></h1>
-
-@yield('content')
+                </nav>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
-        <!-- /.row -->
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        <div class="right_col" role="main">
+           @yield('content')
+        </div>
+        <!-- /page content -->
+
+        <!-- footer content -->
+        <footer>
+            <div class="pull-right">
+                Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+            </div>
+            <div class="clearfix"></div>
+        </footer>
+        <!-- /footer content -->
     </div>
-    <!-- /.container-fluid -->
 </div>
-<!-- /#page-wrapper -->
 
-{{--</div>--}}
-<!-- /#wrapper -->
-
-<!-- jQuery -->
-<script src="{{asset('js/libs.js')}}"></script>
-
-@yield('footer')
-@yield('script')
-
-
-<script>
-    tinymce.init({
-        selector: '#mytextarea'
-    });
-</script>
+ <script src="{{asset('js/libs.js')}}"></script>
 
 </body>
-
 </html>
