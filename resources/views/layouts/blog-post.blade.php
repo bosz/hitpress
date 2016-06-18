@@ -12,9 +12,13 @@
     <title>Blog Post - Start Bootstrap Template</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body{
+            padding-top: 70px;
+        }
+    </style>
 
-    <link href="{{asset('css/libs.css')}}" rel="stylesheet">
 
 </head>
 
