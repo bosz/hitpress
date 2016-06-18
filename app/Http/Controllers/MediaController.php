@@ -95,7 +95,9 @@ class MediaController extends Controller
     public function destroy($id)
     {
         //
-        Photo::find($id)->delete();
+        $photo=Photo::find($id);
+        unlink(public_path().$photo->file);
+        $photo->delete();
         return redirect()->route('admin.media.index');
     }
 }

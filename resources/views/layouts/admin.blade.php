@@ -138,9 +138,9 @@
                             <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="{{$admin->photo->file}}" alt="Profile Image" /></span>
                         <span>
-                          <span>John Smith</span>
+                          <span>{!! $admin->name !!}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -150,9 +150,9 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="{{$admin->photo->file}}" alt="Profile Image" /></span>
                         <span>
-                          <span>John Smith</span>
+                          <span>{!! $admin->name !!}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -162,9 +162,9 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="{{$admin->photo->file}}" alt="Profile Image" /></span>
                         <span>
-                          <span>John Smith</span>
+                          <span>{!! $admin->name !!}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
@@ -174,9 +174,9 @@
                                 </li>
                                 <li>
                                     <a>
-                                        <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span>
+                                        <span class="image"><img src="{{$admin->photo->file}}" alt="Profile Image" /></span>
                         <span>
-                          <span>John Smith</span>
+                          <span>{!! $admin->name !!}</span>
                           <span class="time">3 mins ago</span>
                         </span>
                         <span class="message">
