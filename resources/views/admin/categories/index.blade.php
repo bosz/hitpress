@@ -4,7 +4,13 @@
 
 
     <div class="col-md-6 create-category">
-        <h2>Create Category</h2>
+        <div class="row">
+            <div class="col-md-3"><h2>Categories</h2></div>
+            <div class="col-md-3 col-md-offset-6">
+                <button class="btn btn-primary pull-right"><a style="color: white" href="{{route('admin.category.create')}}">Create Categories</a></button>
+            </div>
+
+        </div>
 
         {!! Form::open(['method'=>'post','action'=>'CategoriesController@store']) !!}
 

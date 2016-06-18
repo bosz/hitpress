@@ -1,16 +1,22 @@
 @extends('layouts.admin')
 
 @section('content')
+<div class="row">
+    <div class="col-md-3"><h2>Users</h2></div>
+    <div class="col-md-3 col-md-offset-6">
+        <button class="btn btn-primary pull-right"><a style="color: white" href="{{route('admin.users.create')}}">Create Users</a></button>
+    </div>
 
-    <h2>Users</h2>
-    <hr>
+</div>
+
+
 
     @if(Session::has('deleted_user'))
         <p>{{session('deleted_user')}}</p>
 
     @endif
 
-
+<div class="container">
     <table class="table">
     <thead>
         <tr>
@@ -41,5 +47,6 @@
     @endif
     </tbody>
     </table>
+</div>
 
 @stop
