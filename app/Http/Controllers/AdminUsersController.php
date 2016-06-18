@@ -10,6 +10,7 @@ use App\Photo;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 
 class AdminUsersController extends Controller
@@ -22,6 +23,7 @@ class AdminUsersController extends Controller
     public function index()
     {
         //
+
         $users= User::all();
         return view('admin.users.index',compact('users'));
     }

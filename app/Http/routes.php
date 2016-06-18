@@ -25,17 +25,13 @@ Route::resource('admin/users','AdminUsersController');
 
 
 
-Route::get('/login',function(){
+Route::get('/admin',function(){
     if(Auth::check()){
-        return redirect('admin');
+        return redirect('/admin/post');
     }else{
         return view('auth.login');
     }
 
-});
-
-Route::get('/admin',function(){
-   return view('layouts.admin');
 });
 
 Route::get('/post/{id}',['as'=>'home.post','uses'=>'AdminPostsController@post']);
